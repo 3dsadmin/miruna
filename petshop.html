@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pet Shop | PetMart</title>
+<meta charset="iso-8859-1">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]><link href="css/ie6.css" rel="stylesheet" type="text/css"><![endif]-->
+<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+</head>
+<body>
+<div id="header"> <a href="#" id="logo"><img src="images/logo.gif" width="310" height="114" alt=""></a>
+  <ul class="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="petshop.html">PetShop</a></li>
+	<li><a href="adoptions.html">Adoptions</a></li>
+    <li><a href="about.html">About us</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+</div>
+<div id="content">
+		</div>
+		<div id="rightside"> </div>
+		
+		<?php
+			$q="SELECT * 
+			FROM products";
+			$result =mysqli_query($con,$q);
+		    while($row=mysqli_fetch_array($result));
+			{ 
+		        echo '<hr><a href="single.php?cod='.$row['Cid'].'"><p><font color="darkblue" size=3>' .$row['Pname'].'</font>';
+				echo '<br><img width="100" height="85" src="'.$row0['Pname'].'/'.$row['Picture'].'">'; 
+				echo '<br><font color="lightgray">'.$row['Items'].'</font>';
+				echo '&nbsp; &nbsp; &nbsp <strong>'.$row['Price'].'$$</strong></a>';
+			}
+		?>
+		
+</div>
+</body>
+</html>
